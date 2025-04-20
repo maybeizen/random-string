@@ -1,0 +1,7 @@
+# Ignore dev files from npm package
+src/
+tsup.config.ts
+tsconfig.json
+.vscode/
+.gitignore
+README.md

@@ -1,0 +1,27 @@
+{
+  "name": "@maybeizen/random-string",
+  "version": "1.0.0",
+  "description": "A simple random string generator with some basic configuration.",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup"
+  },
+  "keywords": [
+    "random",
+    "string",
+    "utility",
+    "password",
+    "generator"
+  ],
+  "author": "maybeizen",
+  "license": "MIT",
+  "packageManager": "pnpm@10.8.1",
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
+  }
+}
