@@ -6,9 +6,10 @@ A simple, lightweight, and flexible random string generator for JavaScript and T
 
 ## Features
 
-- Easy to use
-- Customizable length and character sets
-- Optionally include symbols, numbers, etc. for secure tokens
+- Easy to use and well-typed
+- Fully customizable character sets
+- Great for passwords, tokens, or general-purpose random strings
+- Supports custom charsets
 
 ---
 
@@ -28,26 +29,50 @@ yarn add @maybeizen/random-string
 import { generateRandomString } from "@maybeizen/random-string";
 
 const result = generateRandomString({
-  length: 10,
+  length: 12,
   useSymbols: true,
+  useNumbers: true,
 });
 
-console.log(result); // Example: "a#9vT$kL@1"
+console.log(result); // Example: "d9@Fk3!bZ2#Q"
 ```
 
 ### Options
 
-| Option       | Type    | Default | Description                              |
-| ------------ | ------- | ------- | ---------------------------------------- |
-| `length`     | number  | `16`    | Length of the generated string           |
-| `useSymbols` | boolean | `false` | Whether to include symbols (e.g., `!@#`) |
+```ts
+export interface RandomStringOptions {
+  length?: number; // Default: 16
+  useLowercase?: boolean; // Default: true
+  useUppercase?: boolean; // Default: true
+  useNumbers?: boolean; // Default: true
+  useSymbols?: boolean; // Default: false
+  customCharset?: string; // Default: undefined (overrides all other options)
+}
+```
+
+| Option          | Type      | Default     | Description                                                            |
+| --------------- | --------- | ----------- | ---------------------------------------------------------------------- |
+| `length`        | `number`  | `16`        | Length of the generated string                                         |
+| `useLowercase`  | `boolean` | `true`      | Include lowercase letters (a–z)                                        |
+| `useUppercase`  | `boolean` | `true`      | Include uppercase letters (A–Z)                                        |
+| `useNumbers`    | `boolean` | `true`      | Include numeric characters (0–9)                                       |
+| `useSymbols`    | `boolean` | `false`     | Include symbols (`!@#$%^&*`, etc.)                                     |
+| `customCharset` | `string`  | `undefined` | Provide a custom character set (overrides all other character options) |
 
 ---
 
 ## Example Output
 
-- `generateRandomString({ length: 8 })`: `"gT7dL2aQ"`
-- `generateRandomString({ length: 8, useSymbols: true })`: `"f@9!Kd#Z"`
+```ts
+generateRandomString({ length: 8 });
+// "dK3g9HqZ"
+
+generateRandomString({ useSymbols: true });
+// "Y2@f#qL!P9$z"
+
+generateRandomString({ length: 6, customCharset: "abc123" });
+// "a3b1ca"
+```
 
 ---
 
