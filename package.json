@@ -2,7 +2,7 @@
   "name": "@maybeizen/random-string",
   "version": "1.0.0",
   "description": "A simple random string generator with some basic configuration.",
-  "main": "dist/index.cjs",
+  "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
