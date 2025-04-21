@@ -5,3 +5,5 @@ tsconfig.json
 .vscode/
 .gitignore
 README.md
+pnpm-lock.yaml
+pnpm-workspace.yaml
